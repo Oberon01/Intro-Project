@@ -18,10 +18,12 @@ const App = () => {
     const response = await fetch(`${API_URL}&s=${title}`);
     const data = await response.json();
     setMovies(data.Search);
+    console.log(`https://imdb.com/title/${data.Search[0].imdbID}`)
   };
 
   useEffect(() => {
     searchMovies('Batman');
+    
 
   },[]);
   return (
